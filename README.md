@@ -45,6 +45,20 @@ $log~P~Q=7$
 
 The log equation on the left is not analytically calculatable. That is, there is no known formula that you can plug in to get the answer generally. This is all a bit confusing, but it's fair to say that we could call the problem the "Discrete Point Division" problem instead of Discrete Log.
 
+
+```python
+# Example where x1 != x2
+
+from ecc import FieldElement, Point
+
+prime = 137
+a = FieldElement(0, prime)
+b = FieldElement(7, prime)
+p = Point(FieldElement(73, prime), FieldElement(128, prime), a, b)
+
+print(p+p)
+```
+
 ### Try it
 
 #### Find the following scalar multiplications on the curve  \\( y^2 = x^3 + 7: F_{223} \\)
